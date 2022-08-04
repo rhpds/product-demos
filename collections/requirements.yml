@@ -3,10 +3,6 @@ collections:
   - name: redhat_cop.controller_configuration
     version: 2.1.1
   #linux
-  - name: redhat.insights
-    version: 1.0.7
-  - name: redhat.rhel_system_roles
-    version: 1.16.2
   - community.general
   - containers.podman
   #windows
