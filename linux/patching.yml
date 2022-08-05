@@ -7,18 +7,14 @@
   
   tasks:
   - wait_for_connection:
-  - dnf:
-      name: python36
-    ignore_errors: True
-    register: install_python36
+  - setup:
     
   - name: Link python3.6 to /usr/bin/python
     community.general.alternatives:
       name: python
-      path: /usr/bin/python3.6
+      path: /usr/bin/unversioned-python
       link: /usr/bin/python
-      state: auto
-    when: install_python36.changed
+    when: ansible_distribution_major_version == "8"
 
   - include_role:
       name: demo.patching.patch_linux
