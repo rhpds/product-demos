@@ -1,10 +1,12 @@
 ---
 - hosts: "{{ HOSTS }}"
   become: yes
+  gather_facts: False
   vars:
     report_server: node1
   
   tasks:
+  - wait_for_connection:
   - dnf:
       name: python36
     ignore_errors: True
