@@ -55,6 +55,7 @@ controller_templates:
     inventory: "Workshop Inventory"
     project: "Azure Repo"
     playbook: "project/create_rhel_vm_demo.yml"
+    execution_environment: "Azure"
     credentials:
     - "Azure Infrastructure"
     extra_vars:
@@ -79,6 +80,7 @@ controller_templates:
     inventory: "Workshop Inventory"
     project: "Azure Repo"
     playbook: "project/create_windows_vm_demo.yml"
+    execution_environment: "Azure"
     credentials:
     - "Azure Infrastructure"
     extra_vars:
