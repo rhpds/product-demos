@@ -9,11 +9,8 @@
   - wait_for_connection:
   - setup:
     
-  - name: Link python3.6 to /usr/bin/python
-    community.general.alternatives:
-      name: python
-      path: /usr/bin/unversioned-python
-      link: /usr/bin/python
+  - name: Link /usr/libexec/platform-python to /usr/bin/python
+    command: ln -fs /usr/libexec/platform-python /usr/bin/python
     when: ansible_distribution_major_version == "8"
 
   - include_role:
