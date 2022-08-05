@@ -37,7 +37,7 @@ controller_inventory_sources:
     update_on_launch: true
     source_vars:
       include_vm_resource_groups:
-       - ansible_test
+       - "{{ resource_group_name }}"
        
       hostnames:
        - computer_name
@@ -58,7 +58,7 @@ controller_templates:
     credentials:
     - "Azure Infrastructure"
     extra_vars:
-      resource_group_name: "ansible_test"
+      resource_group_name: "{{ resource_group_name }}"
       region: "eastus"
       vnet_cidr: "10.0.0.0/16"
       subnet_cidr: "10.0.1.0/24"
@@ -82,7 +82,7 @@ controller_templates:
     credentials:
     - "Azure Infrastructure"
     extra_vars:
-      resource_group_name: "ansible_test"
+      resource_group_name: "{{ resource_group_name }}"
       region: "eastus"
       vnet_cidr: "10.0.0.0/16"
       subnet_cidr: "10.0.1.0/24"
@@ -105,5 +105,5 @@ controller_templates:
     credentials:
     - "Azure Infrastructure"
     extra_vars:
-      resource_group_name: "ansible_test"
+      resource_group_name: "{{ resource_group_name }}"
       region: "eastus"
