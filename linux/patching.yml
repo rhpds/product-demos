@@ -5,6 +5,10 @@
     report_server: node1
   
   tasks:
+  - dnf:
+      name: python36
+    ignore_errors: True
+    
   - include_role:
       name: demo.patching.patch_linux
 
