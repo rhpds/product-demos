@@ -15,7 +15,7 @@ controller_projects:
     description: Azure Demo Repo
     organization: Default
     scm_type: git
-    scm_url: https://github.com/ansible-cloud/azure.git
+    scm_url: https://github.com/agonzalezrh/azure.git
 
 controller_credentials:
   - name: Azure Infrastructure
