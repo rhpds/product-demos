@@ -1,10 +1,18 @@
 ---
 - name: Windows updates
   hosts: "{{ HOSTS | default('os_windows') }}"
+  gather_facts: False
   vars:
     report_server: win1
   
   tasks:
+  - name: Wait till winRM port is available
+    wait_for_connection:
+      timeout: 1200
+     
+  - name: Gather manually the facts
+    setup:
+    
   - include_role:
       name: demo.patching.patch_windows
 
