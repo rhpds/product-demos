@@ -50,6 +50,23 @@ controller_inventory_sources:
         key: os_profile.system
 
 controller_templates:
+  - name: "AZURE / CREATE INFRA"
+    job_type: run
+    inventory: "Workshop Inventory"
+    project: "Azure Repo"
+    playbook: "project/create_infra.yml"
+    execution_environment: "Azure"
+    credentials:
+    - "Azure Infrastructure"
+    extra_vars:
+      resource_group_name: "{{ resource_group_name }}"
+      region: "eastus"
+      vnet_cidr: "10.0.0.0/16"
+      subnet_cidr: "10.0.1.0/24"
+      vnet_name: "demo_vnet"
+      subnet_name: "demo_subnet"
+      network_sec_group_name: "demo_sec_group"
+
   - name: "AZURE / RHEL 8 VM"
     job_type: run
     inventory: "Workshop Inventory"
